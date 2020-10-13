@@ -1,0 +1,5 @@
+.[Vv]s/
+[Bb]in/
+[Dd]ebug/
+[x64]
+*.vcxproj.user
