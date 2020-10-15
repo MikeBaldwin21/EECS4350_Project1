@@ -1,15 +1,17 @@
 #pragma once
 
+#include <map>
 #include <string>
 
 class Shader
 {
-private:
+public:
 	unsigned int programID;
+	std::map<std::string, int> varLocations;
 
 public:
-	Shader(const char *vertexShaderText, const char* fragmentShaderText);
-	~Shader();
+	Shader();
+	Shader(std::string vertexShaderFilePath, std::string fragmentShaderFilePath);
+	void Free();
 	void Bind();
-	void Unbind();
 };
