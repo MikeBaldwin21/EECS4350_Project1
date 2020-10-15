@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Drawable.h" />
+    <ClInclude Include="LoadShaders.h" />
+    <ClInclude Include="PositionInfo.h" />
+    <ClInclude Include="vgl.h" />
+    <ClInclude Include="vmath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LoadShaders.cpp" />
+    <ClCompile Include="PositionInfo.cpp" />
+    <ClCompile Include="readfile.cpp" />
+    <ClCompile Include="Sept212020.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project0.frag" />
+    <None Include="project0a.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -150,33 +167,6 @@
       <AdditionalDependencies>freeglut.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="LoadShaders.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="Vector3.h" />
-    <ClInclude Include="Vector4.h" />
-    <ClInclude Include="vgl.h" />
-    <ClInclude Include="vmath.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BasicRoutines.cpp" />
-    <ClCompile Include="Color.cpp" />
-    <ClCompile Include="LoadShaders.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Vector3.cpp" />
-    <ClCompile Include="Vector4.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Mesh.frag" />
-    <None Include="Mesh.vert" />
-    <None Include="project0.frag" />
-    <None Include="project0.vert" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

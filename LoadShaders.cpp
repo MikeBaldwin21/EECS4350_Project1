@@ -17,7 +17,8 @@ extern "C" {
 
 	//----------------------------------------------------------------------------
 
-	static const GLchar* ReadShader(const char* filename)
+	static const GLchar*
+		ReadShader(const char* filename)
 	{
 #ifdef WIN32
 		FILE* infile;
@@ -52,20 +53,21 @@ extern "C" {
 
 	//----------------------------------------------------------------------------
 
-	GLuint LoadShaders(ShaderInfo* shaders)
+	GLuint
+		LoadShaders(ShaderInfo* shaders)
 	{
-		if(shaders == NULL)
-			return 0;
+		if(shaders == NULL) { return 0; }
 
-		auto program = glCreateProgram();
+		GLuint program = glCreateProgram();
 
-		auto entry = shaders;
+		ShaderInfo* entry = shaders;
 		while(entry->type != GL_NONE)
 		{
-			auto shader = glCreateShader(entry->type);
+			GLuint shader = glCreateShader(entry->type);
+
 			entry->shader = shader;
 
-			auto source = ReadShader(entry->filename);
+			const GLchar* source = ReadShader(entry->filename);
 			if(source == NULL)
 			{
 				for(entry = shaders; entry->type != GL_NONE; ++entry)
@@ -90,7 +92,7 @@ extern "C" {
 				GLsizei len;
 				glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &len);
 
-				auto log = new GLchar[len + 1];
+				GLchar* log = new GLchar[len + 1];
 				glGetShaderInfoLog(shader, len, &len, log);
 				std::cerr << "Shader compilation failed: " << log << std::endl;
 				delete[] log;
@@ -121,7 +123,7 @@ extern "C" {
 			GLsizei len;
 			glGetProgramiv(program, GL_INFO_LOG_LENGTH, &len);
 
-			auto log = new GLchar[len + 1];
+			GLchar* log = new GLchar[len + 1];
 			glGetProgramInfoLog(program, len, &len, log);
 			std::cerr << "Shader linking failed: " << log << std::endl;
 			delete[] log;

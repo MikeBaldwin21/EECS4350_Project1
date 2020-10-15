@@ -1,0 +1,6 @@
+﻿  LoadShaders.cpp
+  PositionInfo.cpp
+C:\Dev\Projects\EECS4350_Project1\vmath.h(1022,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  readfile.cpp
+  Sept212020.cpp
+C:\Dev\Projects\EECS4350_Project1\Sept212020.cpp(61,19): error C2065: 'keypress': undeclared identifier
